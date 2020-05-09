@@ -27,6 +27,8 @@ nav {
 	width: 90%;
 	margin: auto;
 	padding: 1rem;
+
+	align-items: center;
 }
 #logoFlex {
 	flex: 2 1 40rem; /* flexing within the div */
@@ -46,7 +48,7 @@ nav ul {
 	/* for aligning in the center */
 	align-items: center;
 }
-@media screen and (max-width: 776px) {
+@media screen and (max-width: 500px) {
 	nav {
 		flex-flow: wrap;
 	}
