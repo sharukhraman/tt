@@ -1,0 +1,59 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+body {
+	background-color: #dce1e4;
+	font-family: "Merriweather", serif;
+}
+h1 {
+	font-size: 2rem;
+}
+.main-head {
+	background: #24343d;
+	color: aliceblue;
+}
+a {
+	color: white;
+	text-decoration: none;
+}
+a:hover {
+	color: #dce1e4;
+}
+nav {
+	display: flex;
+	min-height: 8vh;
+	width: 90%;
+	margin: auto;
+	padding: 1rem;
+}
+#logoFlex {
+	flex: 2 1 40rem; /* flexing within the div */
+
+	display: flex;
+}
+.logo {
+	width: 30px;
+	height: 30px;
+}
+nav ul {
+	/* basis 40rem is essential for not collapsing in the time of reducing screen size */
+	flex: 1 1 40rem; /* within the list */
+	display: flex;
+	justify-content: space-around;
+	list-style: none;
+	/* for aligning in the center */
+	align-items: center;
+}
+@media screen and (max-width: 776px) {
+	nav {
+		flex-flow: wrap;
+	}
+	nav ul {
+		flex-flow: column wrap;
+	}
+	#logoFlex {
+		justify-content: center;
+	}
+}
