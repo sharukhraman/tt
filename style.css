@@ -18,22 +18,22 @@ a {
 	color: white;
 	text-decoration: none;
 }
-a:hover,a:active,a:focus {
+a:hover,
+a:active,
+a:focus {
 	color: #dce1e4;
 }
 nav {
 	display: flex;
-	min-height: 8vh;
+	min-height: 10vh;
 	width: 90%;
 	margin: auto;
 	padding: 1rem;
-
 	align-items: center;
 }
 #logoFlex {
-	flex: 2 1 40rem; /* flexing within the div */
-
-	display: flex;
+	flex: 2 1 40rem; /* basis:40= Maintein width=40rem
+    to certain amount of space when availebale  */
 }
 .logo {
 	width: 30px;
@@ -41,21 +41,22 @@ nav {
 }
 nav ul {
 	/* basis 40rem is essential for not collapsing in the time of reducing screen size */
-	flex: 1 1 40rem; /* within the list */
 	display: flex;
+	flex: 1 1 40rem;
 	justify-content: space-around;
 	list-style: none;
 	/* for aligning in the center */
-	align-items: center;
 }
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 700px) {
 	nav {
-		flex-flow: wrap;
-	}
-	nav ul {
 		flex-flow: column wrap;
 	}
+	nav ul {
+		flex: 1 1 0;
+		flex-flow: column wrap;
+		align-items: center;
+	}
 	#logoFlex {
-		justify-content: center;
+		flex: 1 1 0rem;
 	}
 }
