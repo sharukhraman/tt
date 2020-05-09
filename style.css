@@ -18,7 +18,7 @@ a {
 	color: white;
 	text-decoration: none;
 }
-a:hover {
+a:hover,a:active {
 	color: #dce1e4;
 }
 nav {
