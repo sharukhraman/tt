@@ -11,35 +11,31 @@ h1 {
 	font-size: 2rem;
 }
 .main-head {
-	background: #24343d;
-	color: aliceblue;
+	background-color: #ffffff;
 }
 a {
-	color: white;
+	color: rgb(20, 20, 20);
 	text-decoration: none;
 }
 a:hover,
 a:active,
 a:focus {
-	color: #dce1e4;
+	color: #4a5255;
+}
+.logo {
+	width: 30px;
+	height: 30px;
 }
 nav {
 	display: flex;
 	min-height: 10vh;
 	width: 90%;
 	margin: auto;
-	padding: 1rem;
+	padding: 1rem 0rem;
 	align-items: center;
+	box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
 }
-#logoFlex {
-	flex: 2 1 40rem; /* basis:40= Maintein width=40rem
-    to certain amount of space when availebale  */
-}
-.logo {
-	width: 30px;
-	height: 30px;
-}
-nav ul {
+.nav-list {
 	/* basis 40rem is essential for not collapsing in the time of reducing screen size */
 	display: flex;
 	flex: 1 1 40rem;
@@ -47,16 +43,71 @@ nav ul {
 	list-style: none;
 	/* for aligning in the center */
 }
+#logoFlex {
+	flex: 1 1 30rem; /* basis:40= Maintein width=40rem
+	to certain amount of space when availebale  */
+	margin-left: 20px;
+}
+
 @media screen and (max-width: 700px) {
-	nav {
-		flex-flow: column wrap;
+	/* Generate Burger Menu */
+
+	.burger {
+		position: relative;
 	}
-	nav ul {
-		flex: 1 1 0;
-		flex-flow: column wrap;
+	.burger span {
+		padding: 0.2rem 1.4rem;
+		background-color: #4a5255;
+		margin: 0.5rem 0rem;
+		display: block;
+		/* cross animationn */
+		transition: all 0.5s ease;
+	}
+	.nav-list {
+		background: #b1b5b6;
+		width: 50%;
+		height: 100%;
+		position: fixed;
+		top: 0;
+		left: 100%;
+		flex-direction: column;
 		align-items: center;
+		align-self: center;
+		transition: transform 1s ease;
 	}
-	#logoFlex {
-		flex: 1 1 0rem;
+
+	.menu_check {
+		position: absolute;
+		top: 2vh;
+		right: 5%;
+		height: 5rem;
+		width: 5rem;
+		cursor: pointer;
+		opacity: 0;
+		z-index: 100;
 	}
+	.menu_check:checked + .nav-list {
+		transform: translateX(-100%);
+	}
+	.menu_check:checked ~ .burger span {
+		background-color: #ffffff;
+	}
+	.menu_check:checked ~ .burger span {
+		background-color: #ffffff;
+	}
+	.menu_check:checked ~ .burger span:nth-child(1) {
+		transform: rotateZ(45deg) translate(10%);
+		transform-origin: top left;
+	}
+	.menu_check:checked ~ .burger span:nth-child(3) {
+		transform: rotateZ(-45deg) translate(-10%);
+		transform-origin: top left;
+	}
+	.menu_check:checked ~ .burger span:nth-child(2) {
+		opacity: 0;
+	}
+}
+
+.nav-active {
+	transform: translateX(0%);
 }
