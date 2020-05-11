@@ -63,7 +63,7 @@ nav {
 	.burger span {
 		padding: 0.2rem 1.4rem;
 		background-color: #4a5255;
-		margin: 0.5rem 0rem;
+		margin: 0.5rem 2rem;
 		display: block;
 		/* cross animationn */
 		transition: all 0.5s ease;
@@ -77,10 +77,12 @@ nav {
 		left: 100%;
 		flex-direction: column;
 		align-items: center;
-		align-self: center;
+		justify-content: center;
 		transition: transform 1s ease;
 	}
-
+	.nav-list li {
+		margin-bottom: 40px;
+	}
 	.menu_check {
 		position: absolute;
 		top: 2vh;
